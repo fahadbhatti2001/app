@@ -1,32 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
     return (
-        <div className="flex justify-between items-center py-4 px-20 bg-zinc-400">
-            <div className="Logo ">
-                <h1 className="text-2xl ">
-                    Logo
-                </h1>
+        <div className="flex justify-between items-center h-[10vh] px-20">
+            <div className="">
+                <h1 className="font-PoppinsRegular text-2xl">markit</h1>
             </div>
             <div>
-                <ul className="flex gap-4">
-                    <li className="">
-                        <Link to='/'>Home</Link>
+                <ul className="flex gap-12">
+                    <li className="font-PoppinsRegular text-base transition-all hover:text-primary-2">
+                        <Link to="/">Home</Link>
                     </li>
-                    <li className="">
-                        <Link to='/'>Services</Link>
+                    <li className="font-PoppinsRegular text-base transition-all hover:text-primary-2">
+                        <Link to="/">Services</Link>
                     </li>
-                    <li className="">
-                        <Link to='/'>About</Link>
+                    <li className="font-PoppinsRegular text-base transition-all hover:text-primary-2">
+                        <Link to="/">About</Link>
                     </li>
-                    <li className="">
-                        <Link to='/'>Contact</Link>
-                    </li>
-                    <li className="">
-                        <Link to='/'>Login</Link>
+                    <li className="font-PoppinsRegular text-base transition-all hover:text-primary-2">
+                        <Link to="/">Contact</Link>
                     </li>
                 </ul>
+            </div>
+            <div className="">
+                    <Link to="/login" className="font-PoppinsMedium text-base bg-white py-2 px-12 rounded-full shadow-md transition-all hover:bg-primary-2 hover:text-white">
+                        Login
+                    </Link>
             </div>
         </div>
     );
