@@ -3,16 +3,17 @@ import login from "@/Assets/images/VectorOne.svg"
 
 export const Login = () => {
     return (
-        <div className="grid grid-cols-2 place-content-center h-[80vh] bg-black py-6 px-20">
-            <div className="">
-                <div className="bg-slate-400">
-                    <h1 className="font-PoppinsBold text-2xl">
-                        Welcome Back
-                    </h1>
-                </div>
-                <div className="pl-10 bg-slate-400">
-                    <img src={login} className="" />
-                </div>
+        <div className="grid grid-cols-2 place-content-center h-[80vh] px-20">
+            <div className="col-span-1">
+                <img src={login}/>
+            </div>
+            <div className="col-span-1 bg-slate-300 px-12 flex flex-col justify-center">
+                <h1 className="font-PoppinsBold text-4xl text-black">
+                    Login
+                </h1>
+                <h1 className="font-PoppinsBold text-4xl text-black">
+                    Login
+                </h1>
             </div>
         </div>
     );
