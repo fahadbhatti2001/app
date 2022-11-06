@@ -1,7 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { HeaderLinks } from "./HeaderLinks";
 
 export const Header = () => {
+
+    const linksData = [
+        {
+            name: "Home", urlLinksd: "/"
+        },
+        {
+            name: "About", urlLinksd: "/about"
+        },
+        {
+            name: "Contact", urlLinksd: "/contact"
+        },
+    ]
+
+
+    
     return (
         <div className="flex justify-between items-center h-[10vh] px-20">
             <div className="">
@@ -9,18 +25,11 @@ export const Header = () => {
             </div>
             <div>
                 <ul className="flex gap-12">
-                    <li className="font-PoppinsRegular text-base transition-all hover:text-primary-3">
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li className="font-PoppinsRegular text-base transition-all hover:text-primary-3">
-                        <Link to="/">Services</Link>
-                    </li>
-                    <li className="font-PoppinsRegular text-base transition-all hover:text-primary-3">
-                        <Link to="/">About</Link>
-                    </li>
-                    <li className="font-PoppinsRegular text-base transition-all hover:text-primary-3">
-                        <Link to="/">Contact</Link>
-                    </li>
+                    {
+                        linksData.map((a, index) =>
+                            <HeaderLinks name={linksData[index].name} url={linksData[index].urlLinksd}/>
+                        )
+                    }
                 </ul>
             </div>
             <div className="">
