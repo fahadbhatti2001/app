@@ -6,18 +6,19 @@ export const Header = () => {
 
     const linksData = [
         {
-            name: "Home", urlLinksd: "/"
+            name: "Home", urlLinks: "/"
         },
         {
-            name: "About", urlLinksd: "/about"
+            name: "Services", urlLinks: "/services"
         },
         {
-            name: "Contact", urlLinksd: "/contact"
+            name: "About", urlLinks: "/about"
+        },
+        {
+            name: "Contact", urlLinks: "/contact"
         },
     ]
 
-
-    
     return (
         <div className="flex justify-between items-center h-[10vh] px-20">
             <div className="">
@@ -27,7 +28,7 @@ export const Header = () => {
                 <ul className="flex gap-12">
                     {
                         linksData.map((a, index) =>
-                            <HeaderLinks name={linksData[index].name} url={linksData[index].urlLinksd}/>
+                            <HeaderLinks key={index} name={linksData[index].name} url={linksData[index].urlLinks}/>
                         )
                     }
                 </ul>
