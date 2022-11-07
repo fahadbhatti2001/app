@@ -33,7 +33,7 @@ export const Login = () => {
                     </form>
                 </div>
             </div>
-            <div className="col-span-1">
+            <div className="col-span-1 flex justify-center items-center">
                 <img src={login}/>
             </div>
         </div>
