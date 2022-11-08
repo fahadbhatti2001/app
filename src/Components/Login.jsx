@@ -5,8 +5,8 @@ import login from "@/Assets/images/VectorOne.svg"
 export const Login = () => {
     return (
         <div className="grid grid-cols-2 place-content-center h-[80vh] px-20">
-            <div className="col-span-1 flex flex-col justify-center items-center">
-                <div className="w-1/2">
+            <div className="md:col-span-1 col-span-2 flex flex-col justify-center">
+                <div className="w-2/3">
                     <h1 className="font-PoppinsSemiBold text-4xl text-zinc-800 pb-2">
                         Login
                     </h1>
@@ -33,7 +33,7 @@ export const Login = () => {
                     </form>
                 </div>
             </div>
-            <div className="col-span-1 flex justify-center items-center">
+            <div className="col-span-1 md:flex hidden justify-center items-center">
                 <img src={login}/>
             </div>
         </div>
