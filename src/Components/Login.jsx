@@ -4,13 +4,13 @@ import login from "@/Assets/images/VectorOne.svg"
 
 export const Login = () => {
     return (
-        <div className="grid grid-cols-2 place-content-center h-[80vh] px-20">
-            <div className="md:col-span-1 col-span-2 flex flex-col justify-center">
-                <div className="w-2/3">
-                    <h1 className="font-PoppinsSemiBold text-4xl text-zinc-800 pb-2">
+        <div className="grid grid-cols-2 place-content-center h-[80vh] lg:px-20 md:px-12 px-6">
+            <div className="lg:col-span-1 col-span-2 flex flex-col justify-center items-center">
+                <div className="lg:w-3/4 w-full">
+                    <h1 className="font-PoppinsSemiBold text-4xl text-zinc-800 pb-2 lg:text-left text-center">
                         Login
                     </h1>
-                    <p className="font-PoppinsRegular text-xs text-zinc-800 pb-2">
+                    <p className="font-PoppinsRegular text-xs text-zinc-800 pb-2 lg:text-left text-center">
                         Enter your credentials to access your account
                     </p>
                     <form action="" className="flex flex-col pt-4">
@@ -33,7 +33,7 @@ export const Login = () => {
                     </form>
                 </div>
             </div>
-            <div className="col-span-1 md:flex hidden justify-center items-center">
+            <div className="col-span-1 lg:flex hidden justify-center items-center">
                 <img src={login}/>
             </div>
         </div>
