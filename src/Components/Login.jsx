@@ -1,8 +1,45 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import login from "@/Assets/images/VectorOne.svg"
+import { useState } from "react";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { auth } from "@/FirebaseConfig";
+import loginImage from "@/Assets/images/VectorOne.svg"
 
 export const Login = () => {
+    
+    const [registerEmail , setregisterEmail] = useState("")
+    const [registerPassword , setregisterPassword] = useState("")
+    const [loginEmail , setloginEmail] = useState("")
+    const [loginPassword , setloginPassword] = useState("")
+  
+    const register = async () => {
+  
+      try {
+        const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
+        console.log(user)
+      } 
+      catch (error) {
+        console.log("Error")
+      }
+  
+    }
+    
+    const login = async () => {
+  
+      try {
+        const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+        console.log(user)
+      } 
+      catch (error) {
+        console.log("Error")
+      }
+  
+    }
+  
+    const logout = async () => {
+      await signOut(auth)
+    }
+
     return (
         <div className="grid grid-cols-2 place-content-center h-[80vh] lg:px-20 md:px-12 px-6">
             <div className="lg:col-span-1 col-span-2 flex flex-col justify-center items-center">
@@ -13,11 +50,11 @@ export const Login = () => {
                     <p className="font-PoppinsRegular text-xs text-zinc-800 pb-2 lg:text-left text-center">
                         Enter your credentials to access your account
                     </p>
-                    <form action="" className="flex flex-col pt-4">
+                    <div className="flex flex-col pt-4">
                         <label htmlFor="email" className="font-PoppinsRegular text-sm text-zinc-800 pb-2 pl-1">Email</label>
-                        <input type="email" id="email" placeholder="Enter your email" className="font-PoppinsRegular text-base p-2 border border-gray-300 rounded shadow-sm mb-4 placeholder:text-xs placeholder:text-zinc-400 focus:outline-primary-3"/>
+                        <input onChange={(e) => {setregisterEmail(e.target.value)}} type="email" id="email" placeholder="Enter your email" className="font-PoppinsRegular text-base p-2 border border-gray-300 rounded shadow-sm mb-4 placeholder:text-xs placeholder:text-zinc-400 focus:outline-primary-3"/>
                         <label htmlFor="password" className="font-PoppinsRegular text-sm text-zinc-800 pb-2 pl-1">Password</label>
-                        <input type="password" id="password" placeholder="Enter your password" className="font-PoppinsRegular text-base p-2 border border-gray-300 rounded shadow-sm mb-4 placeholder:text-xs placeholder:text-zinc-400 focus:outline-primary-3"/>
+                        <input onChange={(e) => {setregisterPassword(e.target.value)}} type="password" id="password" placeholder="Enter your password" className="font-PoppinsRegular text-base p-2 border border-gray-300 rounded shadow-sm mb-4 placeholder:text-xs placeholder:text-zinc-400 focus:outline-primary-3"/>
                         <div className="flex justify-between py-2">
                             <div className="flex items-center ml-1">
                                 <input type="checkbox" id="remember"/>
@@ -29,12 +66,12 @@ export const Login = () => {
                                 </Link>
                             </div>
                         </div>
-                        <input type="submit" value="Login" className="font-PoppinsRegular text-base p-2 bg-primary-3 text-white rounded shadow-sm mt-2"/>
-                    </form>
+                        <button onClick={register} type="button" className="font-PoppinsRegular text-base p-2 bg-primary-3 text-white rounded shadow-sm mt-2">Login</button>
+                    </div>
                 </div>
             </div>
             <div className="col-span-1 lg:flex hidden justify-center items-center">
-                <img src={login}/>
+                <img src={loginImage}/>
             </div>
         </div>
     );
