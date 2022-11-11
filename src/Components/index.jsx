@@ -1,4 +1,5 @@
 export { Login } from "./Login";
+export { Register } from "./Register";
 export { Header } from "./Header/Header";
 export { Footer } from "./Footer";
 export { Dashboard } from "./Dashboard";
