@@ -37,18 +37,7 @@ export const Register = () => {
                         <input onChange={(e) => {setregisterEmail(e.target.value)}} type="email" id="email" placeholder="Enter your email" className="font-PoppinsRegular text-base p-2 border border-gray-300 rounded shadow-sm mb-4 placeholder:text-xs placeholder:text-zinc-400 focus:outline-primary-3"/>
                         <label htmlFor="password" className="font-PoppinsRegular text-sm text-zinc-800 pb-2 pl-1">Password</label>
                         <input onChange={(e) => {setregisterPassword(e.target.value)}} type="password" id="password" placeholder="Enter your password" className="font-PoppinsRegular text-base p-2 border border-gray-300 rounded shadow-sm mb-4 placeholder:text-xs placeholder:text-zinc-400 focus:outline-primary-3"/>
-                        <div className="flex justify-between py-2">
-                            <div className="flex items-center ml-1">
-                                <input type="checkbox" id="remember"/>
-                                <label htmlFor="remember" className="font-PoppinsRegular pl-2 text-xs text-zinc-800">Keep me Login</label>
-                            </div>
-                            <div className="mr-1">
-                                <Link to="/" className="font-PoppinsRegular text-xs text-primary-3">
-                                    Forget Password
-                                </Link>
-                            </div>
-                        </div>
-                        <button onClick={register} type="button" className="font-PoppinsRegular text-base p-2 bg-primary-3 text-white rounded shadow-sm mt-2">Login</button>
+                        <button onClick={register} type="button" className="font-PoppinsRegular text-base p-2 bg-primary-3 text-white rounded shadow-sm mt-2">Register</button>
                     </div>
                 </div>
             </div>
