@@ -1,25 +1,24 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/FirebaseConfig";
 import loginImage from "@/Assets/images/VectorOne.svg"
 
 export const Register = () => {
-    
-    const [registerEmail , setregisterEmail] = useState("")
-    const [registerPassword , setregisterPassword] = useState("")
-  
+
+    const [registerEmail, setregisterEmail] = useState("")
+    const [registerPassword, setregisterPassword] = useState("")
+
     const register = async () => {
-  
-      try {
-        const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
-        console.log(user)
-      } 
-      catch (error) {
-        console.log("Error")
-      }
-  
+
+        try {
+            const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
+            console.log(user)
+        }
+        catch (error) {
+            console.log("Error")
+        }
+
     }
 
     return (
@@ -34,15 +33,15 @@ export const Register = () => {
                     </p>
                     <div className="flex flex-col pt-4">
                         <label htmlFor="email" className="font-PoppinsRegular text-sm text-zinc-800 pb-2 pl-1">Email</label>
-                        <input onChange={(e) => {setregisterEmail(e.target.value)}} type="email" id="email" placeholder="Enter your email" className="font-PoppinsRegular text-base p-2 border border-gray-300 rounded shadow-sm mb-4 placeholder:text-xs placeholder:text-zinc-400 focus:outline-primary-3"/>
+                        <input onChange={(e) => { setregisterEmail(e.target.value) }} type="email" id="email" placeholder="Enter your email" className="font-PoppinsRegular text-base p-2 border border-gray-300 rounded shadow-sm mb-4 placeholder:text-xs placeholder:text-zinc-400 focus:outline-primary-0" />
                         <label htmlFor="password" className="font-PoppinsRegular text-sm text-zinc-800 pb-2 pl-1">Password</label>
-                        <input onChange={(e) => {setregisterPassword(e.target.value)}} type="password" id="password" placeholder="Enter your password" className="font-PoppinsRegular text-base p-2 border border-gray-300 rounded shadow-sm mb-4 placeholder:text-xs placeholder:text-zinc-400 focus:outline-primary-3"/>
-                        <button onClick={register} type="button" className="font-PoppinsRegular text-base p-2 bg-primary-3 text-white rounded shadow-sm mt-2">Register</button>
+                        <input onChange={(e) => { setregisterPassword(e.target.value) }} type="password" id="password" placeholder="Enter your password" className="font-PoppinsRegular text-base p-2 border border-gray-300 rounded shadow-sm mb-4 placeholder:text-xs placeholder:text-zinc-400 focus:outline-primary-0" />
+                        <button onClick={register} type="button" className="font-PoppinsRegular text-base p-2 bg-primary-0 text-white rounded shadow-sm mt-2">Register</button>
                     </div>
                 </div>
             </div>
             <div className="col-span-1 lg:flex hidden justify-center items-center">
-                <img src={loginImage}/>
+                <img src={loginImage} />
             </div>
         </div>
     );

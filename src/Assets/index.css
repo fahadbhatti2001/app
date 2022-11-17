@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body{
-    background-color: #7d91f430;
+    background-color: #7d91f440;
 }
 
 @font-face {
@@ -166,5 +166,17 @@ body{
     font-weight: 100;
     font-style: italic;
     font-display: swap;
+}
+
+body::-webkit-scrollbar {
+    width: 4px;
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #FF8A5B;
 }
 

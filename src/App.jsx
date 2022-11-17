@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route, HashRouter } from "react-router-dom";
-import { Dashboard, Login, Register, Header, Footer } from "@/Components";
+import { Home, Login, Register, Header, Footer } from "@/Components";
 
 export const App = () => {
   return(
@@ -8,7 +8,7 @@ export const App = () => {
       <HashRouter>
         <Header/>
           <Routes>
-            <Route path="/" element={<Dashboard/>}/>
+            <Route path="/" element={<Home/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<Register/>}/>
           </Routes>

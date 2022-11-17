@@ -28,11 +28,10 @@ module.exports = {
        },
        colors: {
         primary: {
-          1: '#ff928e',
-          2: '#7d91f4',
-          3: '#6987F3',
-          4: '#DACC3E',
-          5: '#FF8A5B',
+          0: '#6987F3',
+          1: '#DACC3E',
+          2: '#FF8A5B',
+          3: '#DEE3FC',
         }
        }
     },
