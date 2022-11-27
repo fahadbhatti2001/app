@@ -9,10 +9,14 @@ import Reports from "@/Assets/images/Reports.svg"
 import Response from "@/Assets/images/Response.svg"
 import Support from "@/Assets/images/Support.svg"
 import Happiness from "@/Assets/images/Happiness.svg"
+import { Header, Footer } from '@/Components';
 
 export const Home = () => {
     return (
         <>
+
+           <Header/>
+
             <div className="h-screen grid grid-cols-2">
                 <div className="col-span-1 h-full flex justify-center items-center">
                     <h1 className="font-PoppinsBold text-7xl">
@@ -27,7 +31,7 @@ export const Home = () => {
             </div>
             <div className="">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#fff" fill-opacity="1" d="M0,160L60,170.7C120,181,240,203,360,176C480,149,600,75,720,85.3C840,96,960,192,1080,218.7C1200,245,1320,203,1380,181.3L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+                    <path fill="#fff" d="M0,160L60,170.7C120,181,240,203,360,176C480,149,600,75,720,85.3C840,96,960,192,1080,218.7C1200,245,1320,203,1380,181.3L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
                 </svg>
                 <div className="bg-white grid grid-cols-2 px-20">
                     <div className="col-span-1">
@@ -58,7 +62,7 @@ export const Home = () => {
                     </div>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#fff" fill-opacity="1" d="M0,160L60,170.7C120,181,240,203,360,176C480,149,600,75,720,85.3C840,96,960,192,1080,218.7C1200,245,1320,203,1380,181.3L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+                    <path fill="#fff" d="M0,160L60,170.7C120,181,240,203,360,176C480,149,600,75,720,85.3C840,96,960,192,1080,218.7C1200,245,1320,203,1380,181.3L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
                 </svg>
             </div>
             <div className="px-20 mb-20">
@@ -157,6 +161,8 @@ export const Home = () => {
                     <path className="fill-primary-3" d="M1000,0V165.68a1013.16,1013.16,0,0,0-500-131c-181.71,0-352.3,47.58-500,131V0Z" transform="translate(0 0)"></path>
                 </svg> */}
             </div>
+
+            <Footer/>
         </>
     );
 };

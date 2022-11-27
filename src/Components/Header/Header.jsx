@@ -1,13 +1,23 @@
-import React from "react";
-import { HeaderLinks, LoginButton } from "@/Components";
+import React, { useState } from "react";
+import { LoginButton, UseUserAuth, ProfileButton } from "@/Components";
+
 
 export const Header = () => {
 
+    let {user} = UseUserAuth()
+
     return (
-        <div className="flex justify-between items-center h-[10vh] w-full fixed px-20 bg-primary-3">
+        <div className="flex justify-between items-center h-[10vh] w-full px-20 bg-primary-3">
             <h1 className="font-PoppinsItalic text-2xl">markit</h1>
-            <HeaderLinks/>
-            <LoginButton/>
+            
+            {
+                user 
+                ? 
+                <ProfileButton/>
+                : 
+                <LoginButton/>
+            }
+            
         </div>
     );
 };

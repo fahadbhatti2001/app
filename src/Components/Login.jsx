@@ -1,25 +1,26 @@
-import React from 'react';
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { auth } from "@/FirebaseConfig";
+import React, { useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
 import loginImage from "@/Assets/images/VectorOne.svg"
+import { UseUserAuth } from '@/Components';
+import { setPersistence, browserSessionPersistence } from 'firebase/auth';
+import { auth } from '../FirebaseConfig';
 
 export const Login = () => {
     
-    const [loginEmail , setloginEmail] = useState("")
-    const [loginPassword , setloginPassword] = useState("")
-  
-    const login = async () => {
-  
-      try {
-        const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-        console.log(user)
-      } 
-      catch (error) {
-        console.log("Error")
-      }
-  
+    const [email , setEmail] = useState("")
+    const [password , setPassword] = useState("")
+    const { signIn } = UseUserAuth()
+
+    const navigate = useNavigate()
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        try {
+            await signIn(email, password)
+            navigate('/dashboard')
+        } catch (error) {
+            console.log("Error")
+        }
     }
 
     return (
@@ -32,11 +33,11 @@ export const Login = () => {
                     <p className="font-PoppinsRegular text-xs text-zinc-800 pb-2 lg:text-left text-center">
                         Enter your credentials to access your account
                     </p>
-                    <div className="flex flex-col pt-4">
+                    <form onSubmit={handleSubmit} className="flex flex-col pt-4">
                         <label htmlFor="email" className="font-PoppinsRegular text-sm text-zinc-800 pb-2 pl-1">Email</label>
-                        <input onChange={(e) => {setloginEmail(e.target.value)}} type="email" id="email" placeholder="Enter your email" className="font-PoppinsRegular text-base p-2 border border-gray-300 rounded shadow-sm mb-4 placeholder:text-xs placeholder:text-zinc-400 focus:outline-primary-0"/>
+                        <input onChange={(e) => {setEmail(e.target.value)}} type="email" id="email" placeholder="Enter your email" className="font-PoppinsRegular text-base p-2 border border-gray-300 rounded shadow-sm mb-4 placeholder:text-xs placeholder:text-zinc-400 focus:outline-primary-0"/>
                         <label htmlFor="password" className="font-PoppinsRegular text-sm text-zinc-800 pb-2 pl-1">Password</label>
-                        <input onChange={(e) => {setloginPassword(e.target.value)}} type="password" id="password" placeholder="Enter your password" className="font-PoppinsRegular text-base p-2 border border-gray-300 rounded shadow-sm mb-4 placeholder:text-xs placeholder:text-zinc-400 focus:outline-primary-0"/>
+                        <input onChange={(e) => {setPassword(e.target.value)}} type="password" id="password" placeholder="Enter your password" className="font-PoppinsRegular text-base p-2 border border-gray-300 rounded shadow-sm mb-4 placeholder:text-xs placeholder:text-zinc-400 focus:outline-primary-0"/>
                         <div className="flex justify-between py-2">
                             <div className="flex items-center ml-1">
                                 <input type="checkbox" id="remember"/>
@@ -48,8 +49,8 @@ export const Login = () => {
                                 </Link>
                             </div>
                         </div>
-                        <button onClick={login} type="button" className="font-PoppinsRegular text-base p-2 bg-primary-0 text-white rounded shadow-sm mt-2">Login</button>
-                    </div>
+                        <input type="submit" value="Login" className="font-PoppinsRegular text-base p-2 bg-primary-0 text-white rounded shadow-sm mt-2"/>
+                    </form>
                 </div>
             </div>
             <div className="col-span-1 lg:flex hidden justify-center items-center">

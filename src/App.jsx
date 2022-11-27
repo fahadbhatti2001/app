@@ -1,19 +1,17 @@
 import React from "react";
-import { Routes, Route, HashRouter } from "react-router-dom";
-import { Home, Login, Register, Header, Footer } from "@/Components";
+import { Routes, Route } from "react-router-dom";
+import { Home, UserAuthContextProvider, ProtectedDashboard, ProtectedLogin } from "@/Components";
 
 export const App = () => {
   return(
     <div className="App">
-      <HashRouter>
-        <Header/>
-          <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/login" element={<Login/>}/>
-            <Route path="/register" element={<Register/>}/>
-          </Routes>
-        <Footer/>
-      </HashRouter>
+      <UserAuthContextProvider>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/login" element={<ProtectedLogin/>}/>
+          <Route path="/dashboard" element={<ProtectedDashboard/>}/>
+        </Routes>
+      </UserAuthContextProvider>
     </div>
   )
 };
