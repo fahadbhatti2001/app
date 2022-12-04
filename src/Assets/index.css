@@ -180,3 +180,18 @@ body::-webkit-scrollbar-thumb {
     background-color: #FF8A5B;
 }
 
+.cst-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.cst-scrollbar::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.cst-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #FF8A5B;
+}
+
+input[type="file"] {
+    display: none;
+}

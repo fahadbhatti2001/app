@@ -24,7 +24,7 @@ export const Login = () => {
     }
 
     return (
-        <div className="grid grid-cols-2 place-content-center h-[90vh] lg:px-20 md:px-12 px-6">
+        <div className="grid grid-cols-2 place-content-center h-[80vh] lg:px-20 md:px-12 px-6">
             <div className="lg:col-span-1 col-span-2 flex flex-col justify-center items-center">
                 <div className="lg:w-3/4 w-full">
                     <h1 className="font-PoppinsSemiBold text-4xl text-zinc-800 pb-2 lg:text-left text-center">
