@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { UseUserAuth, Header,  } from '@/Components';
-import { db, auth, storage } from '../FirebaseConfig';
+import { UseUserAuth, Header } from '@/Components';
+import { db, auth, storage } from '@/FirebaseConfig';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { collection, doc, getDocs, setDoc, serverTimestamp } from 'firebase/firestore';
 import Camera from "@/Assets/images/Camera.svg"
@@ -23,21 +23,21 @@ export const Dashboard = () => {
 
     let imageName =  new Date().getTime()
 
-    const { firstname, lastname, email, image, userid, password } = inputData
+    const { email, password } = inputData
 
     const createUsers = async () => {
 
         try {
-            const userCredential = await createUserWithEmailAndPassword(auth, email, password)
-            const user = userCredential.user
-
             const imageRef = ref(storage, `images/${imageName}`)
             uploadBytes(imageRef, isImage).then((snapshot) => {
                 getDownloadURL(snapshot.ref).then( async url => {
+                    const userCredential = await createUserWithEmailAndPassword(auth, email, password)
+                    const user = userCredential.user
+
                     const inputDataCopy = {...inputData}
                     inputDataCopy.timestamp = serverTimestamp()
                     inputDataCopy.image = url
-                    console.log("second Console", inputDataCopy)
+
                     await setDoc(doc(db, 'User', user.uid), inputDataCopy)
                 })
             })

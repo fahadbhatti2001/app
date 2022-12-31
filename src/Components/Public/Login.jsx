@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import loginImage from "@/Assets/images/VectorOne.svg"
 import { UseUserAuth } from '@/Components';
-import { setPersistence, browserSessionPersistence } from 'firebase/auth';
-import { auth } from '../FirebaseConfig';
 
 export const Login = () => {
     
