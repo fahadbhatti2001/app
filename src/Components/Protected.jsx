@@ -1,8 +1,13 @@
 import React from 'react';
 import { Navigate } from "react-router-dom"
-import { UseUserAuth, Dashboard, Login } from '@/Components';
+import { 
+    UseUserAuth, 
+    Dashboard, 
+    Login, 
+    Registration
+} from '@/Components';
 
-export const ProtectedDashboard = ({childern}) => {
+export const ProtectedDashboard = () => {
     
     let { user } = UseUserAuth()
     if(!user){
@@ -12,7 +17,18 @@ export const ProtectedDashboard = ({childern}) => {
     return <Dashboard/>
 };
 
-export const ProtectedLogin = ({childern}) => {
+export const ProtectedRegistration = () => {
+    
+    let { user } = UseUserAuth()
+    if(!user){
+       return  <Navigate to="/login"/>
+    }
+
+    return <Registration/>
+};
+
+
+export const ProtectedLogin = () => {
     
     let { user } = UseUserAuth()
     if(user){

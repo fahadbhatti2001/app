@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { signInWithEmailAndPassword, signOut, onAuthStateChanged, browserLocalPersistence, setPersistence } from "firebase/auth"
+import { signInWithEmailAndPassword, signOut, onAuthStateChanged, browserLocalPersistence, setPersistence, sendPasswordResetEmail } from "firebase/auth"
 import { auth } from "@/FirebaseConfig";
 
 const UserAuthContext = createContext()
@@ -11,6 +11,12 @@ export const UserAuthContextProvider = ({ children }) => {
     const signIn = async (email, password) => {
 
         return await signInWithEmailAndPassword(auth, email, password)
+
+    }
+
+    const forgetPassword = async (email) => {
+        
+        return await sendPasswordResetEmail(auth, email)
 
     }
 
@@ -29,7 +35,7 @@ export const UserAuthContextProvider = ({ children }) => {
     }, [])
 
     return( 
-        <UserAuthContext.Provider value={{ user, signIn, logOut }}>
+        <UserAuthContext.Provider value={{ user, signIn, logOut, forgetPassword }}>
             {children}
         </UserAuthContext.Provider>
     )

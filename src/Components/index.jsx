@@ -4,9 +4,14 @@ export { Login } from "./Public/Login";
 
 // Dashboard Components
 export { Dashboard } from "./Dashboard//Dashboard";
+export { Registration } from "./Dashboard/Registration";
 
 // Auth Components
-export { ProtectedDashboard, ProtectedLogin } from "./Protected";
+export { 
+    ProtectedDashboard, 
+    ProtectedLogin,
+    ProtectedRegistration,
+ } from "./Protected";
 export { UseUserAuth, UserAuthContextProvider } from "../Context/UserAuth";
 
 // Header Components
