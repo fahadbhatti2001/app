@@ -38,13 +38,13 @@ export const Login = () => {
     return (
         <>
 
-            <Header position="sttaic"/>
+            <Header position="static"/>
         
             <div className="grid grid-cols-2 place-content-center h-[80vh] lg:px-20 md:px-12 px-6">
                 <div className="lg:col-span-1 col-span-2 flex flex-col justify-center items-center">
                 {
                     fotgetPassword ?
-                    <div className="lg:w-3/4 w-full">
+                    <div className="lg:w-3/4 w-full trhide">
                         <h1 className="font-PoppinsSemiBold text-4xl text-zinc-800 pb-2 lg:text-left text-center">
                             Login
                         </h1>
@@ -67,7 +67,7 @@ export const Login = () => {
                         </div>
                     </div>
                     :
-                    <div className="lg:w-3/4 w-full">
+                    <div className="lg:w-3/4 w-full trshow">
                         <button onClick={() => setForgetPassword(true)} type="button" className="flex items-center gap-2 text-base text-primary-0 py-2">
                             <FontAwesomeIcon icon={faCircleLeft} />
                             <p className="">Back to Login</p>
@@ -82,7 +82,7 @@ export const Login = () => {
                             <label htmlFor="email" className="font-PoppinsRegular text-sm text-zinc-800 pb-2 pl-1">Email</label>
                             <input onChange={(e) => {setForgetEmail(e.target.value)}} type="email" id="email" placeholder="Enter your email" className="font-PoppinsRegular text-base p-2 border border-gray-300 rounded shadow-sm mb-4 placeholder:text-xs placeholder:text-zinc-400 focus:outline-primary-0"/>
                             <button type="button" onClick={forgetHandleSubmit} className="font-PoppinsRegular text-base p-2 bg-primary-0 text-white rounded shadow-sm mt-2">
-                                Reset PAssword
+                                Reset Password
                             </button>
                         </div>
                     </div>

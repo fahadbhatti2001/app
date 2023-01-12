@@ -1,6 +1,7 @@
 // Public Components
 export { Home } from "./Public/Home";
 export { Login } from "./Public/Login";
+export { Reset } from "./Public/Reset";
 
 // Dashboard Components
 export { Dashboard } from "./Dashboard//Dashboard";

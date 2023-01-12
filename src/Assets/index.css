@@ -195,3 +195,35 @@ body::-webkit-scrollbar-thumb {
 input[type="file"] {
     display: none;
 }
+
+.trshow{
+    animation: cst-show-fade .6s ease;
+    position: relative;
+}
+
+@keyframes cst-show-fade {
+    from{
+        opacity: 0;
+        left: -100%;
+    }
+    to{
+        opacity: 1;
+        left: 0%;
+    }
+}
+
+.trhide{
+    animation: cst-hide-fade .6s ease;
+    position: relative;
+}
+
+@keyframes cst-hide-fade {
+    from{
+        opacity: 0;
+        left: -100%;
+    }
+    to{
+        opacity: 1;
+        left: 0%;
+    }
+}

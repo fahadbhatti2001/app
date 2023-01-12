@@ -6,6 +6,7 @@ import {
   ProtectedDashboard, 
   ProtectedLogin,
   ProtectedRegistration,
+  Reset
 } from "@/Components";
 
 export const App = () => {
@@ -14,6 +15,7 @@ export const App = () => {
       <UserAuthContextProvider>
         <Routes>
           <Route path="/" element={<Home/>}/>
+          <Route path="/reset" element={<Reset/>}/>
           <Route path="/login" element={<ProtectedLogin/>}/>
           <Route path="/dashboard" element={<ProtectedDashboard/>}/>
           <Route path="/register" element={<ProtectedRegistration/>}/>
