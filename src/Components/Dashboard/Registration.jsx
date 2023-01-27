@@ -39,8 +39,6 @@ export const Registration = () => {
                     await setDoc(doc(db, 'User', user.uid), inputDataCopy)
                 })
             })
-            
-            console.log(user)
         }
         catch (error) {
             console.log("Error")
