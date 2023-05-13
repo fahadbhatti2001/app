@@ -129,7 +129,7 @@ export const Home = () => {
                                     24/7 support
                                 </p>
                                 <p className="font-PoppinsRegular text-base">
-                                    Contact us anytime and anywhere.
+                                    Contact us anytime and anywhere
                                 </p>
                             </div>
                         </div>
